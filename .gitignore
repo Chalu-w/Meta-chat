@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+
+# Build and Production Outputs
+dist/
+*/dist/
+build/
+*/build/
+dist-ssr/
+*.local
+
+# Environment & Private Variables
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Credentials & Private Keys
+*.pem
+*.key
+*.cert
+*.crt
+*serviceAccount*.json
+*service-account*.json
+firebase-adminsdk*.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor & System Files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

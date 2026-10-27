@@ -1,0 +1,31 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidProfileImage() {
+      return request.resource.contentType.matches('image/(jpeg|png|webp)')
+        && request.resource.size <= 5 * 1024 * 1024; // 5 MB max
+    }
+
+    // 1. User Profile Photos: /profile_photos/{userId}/{fileName}
+    match /profile_photos/{userId}/{fileName} {
+      // Any authenticated user can view profile photos of other users
+      allow read: if isAuthenticated();
+
+      // Only the authenticated owner can upload or update their own profile photo (max 5 MB, JPEG/PNG/WebP)
+      allow create, update: if isOwner(userId) && isValidProfileImage();
+
+      // Only the owner can delete their profile photo
+      allow delete: if isOwner(userId);
+    }
+  }
+}

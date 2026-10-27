@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Telegram Dark (Default) */
+  --bg-main: #0e1621;
+  --bg-sidebar: #17212b;
+  --bg-active-chat: #242f3d;
+  --bg-card: #202b36;
+  --bg-input: #17212b;
+  --bg-hover: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  --bubble-out: #2b5278;
+  --bubble-out-text: #ffffff;
+  --bubble-in: #182533;
+  --bubble-in-text: #ffffff;
+  --bubble-time: rgba(255, 255, 255, 0.55);
+
+  --accent: #50a7ea;
+  --accent-hover: #4196d6;
+  --accent-gradient: linear-gradient(135deg, #50a7ea 0%, #2f88cc 100%);
+  --accent-light: rgba(80, 167, 234, 0.15);
+
+  --text-main: #f5f5f5;
+  --text-muted: #8292a1;
+  --text-light: #9bb2c6;
+
+  --badge-bg: #50a7ea;
+  --badge-text: #ffffff;
+  --badge-muted: #3a4b5d;
+
+  --online-color: #4fae4e;
+  --away-color: #ffa726;
+  --danger-color: #e53935;
+  --success-color: #43a047;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.5);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --drawer-width: 290px;
+  --chatlist-width: 380px;
+  --sidebar-profile-width: 360px;
+}
+
+/* Telegram Night (OLED Deep Dark) */
+[data-theme='telegram-night'] {
+  --bg-main: #0a0e14;
+  --bg-sidebar: #121820;
+  --bg-active-chat: #1b2430;
+  --bg-card: #161e28;
+  --bg-input: #121820;
+  --bg-hover: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.06);
+
+  --bubble-out: #1f364d;
+  --bubble-out-text: #ffffff;
+  --bubble-in: #16202c;
+  --bubble-in-text: #ffffff;
+  --bubble-time: rgba(255, 255, 255, 0.5);
+
+  --accent: #64b5f6;
+  --accent-hover: #4ba3e3;
+  --accent-gradient: linear-gradient(135deg, #64b5f6 0%, #308cd6 100%);
+  --accent-light: rgba(100, 181, 246, 0.15);
+
+  --text-main: #edf2f7;
+  --text-muted: #78899b;
+  --text-light: #90a4b8;
+}
+
+/* Telegram Light */
+[data-theme='telegram-light'] {
+  --bg-main: #edf2f7;
+  --bg-sidebar: #ffffff;
+  --bg-active-chat: #e7eff7;
+  --bg-card: #ffffff;
+  --bg-input: #f1f4f8;
+  --bg-hover: rgba(0, 0, 0, 0.04);
+  --border-color: rgba(0, 0, 0, 0.08);
+
+  --bubble-out: #e3effa;
+  --bubble-out-text: #1a222c;
+  --bubble-in: #ffffff;
+  --bubble-in-text: #1a222c;
+  --bubble-time: rgba(0, 0, 0, 0.45);
+
+  --accent: #2481cc;
+  --accent-hover: #1c6bad;
+  --accent-gradient: linear-gradient(135deg, #2481cc 0%, #1562a1 100%);
+  --accent-light: rgba(36, 129, 204, 0.12);
+
+  --text-main: #111827;
+  --text-muted: #64748b;
+  --text-light: #475569;
+
+  --badge-bg: #2481cc;
+  --badge-text: #ffffff;
+  --badge-muted: #cbd5e1;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 160, 180, 0.25);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 160, 180, 0.4);
+}
+
+/* Ripple & Interactive States */
+.interactive-item {
+  transition: background-color 0.18s ease, transform 0.12s ease;
+}
+.interactive-item:hover {
+  background-color: var(--bg-hover);
+}
+.interactive-item:active {
+  transform: scale(0.985);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(23, 33, 43, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+[data-theme='telegram-light'] .glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1.6s infinite ease-in-out;
+}

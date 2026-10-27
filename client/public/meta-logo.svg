@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Premium Electric Blue Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0099ff" />
+      <stop offset="45%" stop-color="#0088cc" />
+      <stop offset="100%" stop-color="#0055aa" />
+    </linearGradient>
+    <linearGradient id="glyphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e6f4ff" />
+    </linearGradient>
+    <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#bfe5ff" stop-opacity="0.85" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0055aa" flood-opacity="0.45" />
+    </filter>
+    <filter id="innerGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Squircle Base (Telegram/iOS icon standard) -->
+  <rect x="24" y="24" width="464" height="464" rx="120" fill="url(#bgGrad)" filter="url(#softGlow)" />
+
+  <!-- Subtle Ambient Accent Arc -->
+  <path d="M 80 140 A 180 180 0 0 1 432 140" fill="none" stroke="#ffffff" stroke-width="6" stroke-opacity="0.2" stroke-linecap="round" />
+
+  <!-- The Iconic 'M' Chat Bubble Symbol -->
+  <!-- Left Pillar -->
+  <path d="M 130 350 L 130 190 C 130 165 152 148 174 158 L 256 220 L 338 158 C 360 148 382 165 382 190 L 382 320 C 382 336 368 350 352 350 L 290 350 L 290 240 L 256 270 L 222 240 L 222 350 Z" 
+        fill="url(#glyphGrad)" 
+        filter="url(#innerGlow)" />
+
+  <!-- Integrated Chat Tail & Telegram Flight Wing -->
+  <path d="M 130 350 L 88 385 C 80 392 70 386 72 376 L 82 332 C 78 322 76 311 76 300 C 76 250 110 206 158 194 L 158 260 C 141 270 130 288 130 310 Z" 
+        fill="url(#wingGrad)" />
+
+  <!-- Connectivity Pulse Dots -->
+  <circle cx="256" cy="336" r="14" fill="#0088cc" />
+  <circle cx="210" cy="336" r="10" fill="#0088cc" opacity="0.6" />
+  <circle cx="302" cy="336" r="10" fill="#0088cc" opacity="0.6" />
+</svg>
